@@ -41,11 +41,14 @@ Feature: Users should be able to login
   @NAVF-260
     #User can see and click an option link like "remember me" on the login page
   Scenario: Click on remember me on the login page
-    Then User can see and click an option link like remember me on the login page
+    When User clicks on remember me box
+    Then User can see an option link like remember me on the login page
+    Then User can click an option link like remember me on the login page
 
   @NAVF-261
   #User can see and use an option link like "forgot password"
   Scenario:forgot password button visibility and usability check
-    Then User should see the password in bullet signs
+    Then User can see and use an option link like "forgot password" on the login page in order to successfully reset the password
+
 
 

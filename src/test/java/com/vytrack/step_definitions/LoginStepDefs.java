@@ -95,17 +95,38 @@ public class LoginStepDefs {
     @Then("User should see the password in bullet signs")
     public void user_should_see_the_password_in_bullet_signs() {
         LoginPage loginPage = new LoginPage();
-       Assert.assertEquals("verify password box contais password as default","Password",loginPage.passwordInput.getAttribute("placeholder"));
+       Assert.assertEquals("verify password box contains password as default","Password",loginPage.passwordInput.getAttribute("placeholder"));
     }
 
-    @Then("User can see and click an option link like remember me on the login page")
-    public void user_can_see_and_click_an_option_link_like_remember_me_on_the_login_page() {
+    @Then("User can see and use an option link like \"forgot password\" on the login page in order to successfully reset the password")
+    public void user_can_see_use_an_option_link_like_forgot_password_on_the_login_page() {
         LoginPage loginPage = new LoginPage();
         Assert.assertTrue(loginPage.forgotYourPasswordButton.isDisplayed());
         Assert.assertTrue(loginPage.forgotYourPasswordButton.isEnabled());
         loginPage.forgotYourPasswordButton.click();
-        Assert.assertEquals("verify user navigato to reset request page","Forgot Password",Driver.get().getTitle());
+        Assert.assertEquals("verify user navigate to reset request page","Forgot Password",Driver.get().getTitle());
 
     }
+    @When("User clicks on remember me box")
+    public void User_clicks_on_remember_me_box() {
+        LoginPage loginPage = new LoginPage();
+        BrowserUtils.waitForClickablility(loginPage.checkBoxRem,5);
+        loginPage.checkBoxRem.click();
+    }
+    @Then("User can see an option link like remember me on the login page")
+    public void User_can_see_an_option_link_like_remember_me_on_the_login_page() {
+        LoginPage loginPage = new LoginPage();
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue("verify option link like remember me is visible ",loginPage.rememberMeText.isDisplayed());
+
+    }
+    @Then("User can click an option link like remember me on the login page")
+    public void User_can_click_an_option_link_like_remember_me_on_the_login_page() {
+        LoginPage loginPage = new LoginPage();
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue("verify option link like remember me is intractable",loginPage.checkBoxRem2.isSelected());
+    }
+
+
 
 }

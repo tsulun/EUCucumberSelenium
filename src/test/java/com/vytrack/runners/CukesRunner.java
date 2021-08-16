@@ -13,9 +13,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
         dryRun = false,
-        tags = "@NAVF-266 "
+        tags = "@NAVF-257 or @NAVF-258 or @NAVF-259 or @NAVF-260 or @NAVF-261"
 
 )
 public class CukesRunner {
-//@NAVF-257 or @NAVF-258 or @NAVF-259 or @NAVF-260 or @NAVF-261
+//@NAVF-266
 }

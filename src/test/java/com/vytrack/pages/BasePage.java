@@ -18,6 +18,7 @@ public abstract class BasePage {
     @FindBy(css = "span.title-level-1")
     public List<WebElement> menuOptions;
     @FindBy(css = "div[class='loader-mask shown']")
+
     @CacheLookup
     protected WebElement loaderMask;
 

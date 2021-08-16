@@ -31,6 +31,15 @@ public class LoginPage {
     @FindBy(xpath = "//*[text()='Invalid user name or password.']")
     public WebElement invalidCredentialsMessage;
 
+    @FindBy(xpath = "//span[@class='custom-checkbox__icon']")
+    public WebElement checkBoxRem;
+
+    @FindBy(css = "#remember_me")
+    public WebElement checkBoxRem2;
+
+    @FindBy(xpath = "//*[text()='Remember me on this computer']")
+    public WebElement rememberMeText;
+
     public void login(String username, String password) {
         usernameinput.sendKeys(username);
         passwordInput.sendKeys(password);
